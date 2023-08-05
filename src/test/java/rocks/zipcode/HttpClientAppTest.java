@@ -18,9 +18,14 @@ class HttpClientAppTest {
     }
 
 
+    @Test
+    void extractMessage() {
+
+        String[] incoming = {"wef", "ewrgerg", "ergerg", "'this", "is", "my", "message'", "wefwegf"};
+        String expected = "'this is my message'";
+        String actual = HttpClientApp.ExtractMessage(incoming);
+        Assert.assertEquals(expected,actual);
 
 
-
-
-
+    }
 }
